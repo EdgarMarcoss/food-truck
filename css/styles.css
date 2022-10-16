@@ -5,9 +5,12 @@ html{
 
 /*Menu*/
 .row-menu{
-  margin-left: 50px;
+  /* margin-left: 50px; */
+  display: flex;
+  flex-direction: row;
   padding: 5%;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 
@@ -524,8 +527,27 @@ body{
 
 .column-4{
     width: 25%;
-    float: left;
+    display: flex;
+    justify-content: center;
 }
+
+.column-4 .card{
+  height: 100%;
+  width: 80%;
+}
+
+.column-4 .card img{
+  height: 190px;
+}
+
+.card-body {
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    align-items: flex-start;
+}
+
 .row-menu{
   width: 100%;
 }
@@ -585,4 +607,13 @@ body{
     text-align: center;
   }
   
+}
+
+@media only screen and (max-width: 420px) {
+
+  /* column-4 pasará de tener 25% a 50% */
+.column-4{
+    width: 100%;
+}
+
 }
