@@ -66,7 +66,9 @@ body{
 
 .column-4{
   width: 25%;
-  float: left;
+  padding: 0 10px;
+  height: 400px;
+  /* float: left; */
 }
 
 
@@ -215,43 +217,75 @@ a.link-to-book:hover {
     display: block;
 }
 
-
+.row-menu {
+  position: relative;
+  top: 10vh;
+  height: 90vh;
+  width: 100%;
+}
 
 /*--Cards--*/
 
 .container-card {
-  width: 1090px;
+  width: 100%;
   min-width: 600px;
-  height: 430px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  /* top: 70%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
 }
-  .card {
-    width: 330px;
-    height: 430px;
-    float: left;
-    border-radius: 8px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    position: relative;
-    top: 0;
-    text-align: center;
-    transition: all 0.25s;
-  }
-  .container-card .card:nth-child(2) {
-    margin: 0 50px;
-  }
-  .container-card .card:hover {
-    top: -15px;
-    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
-  }
+.card {
+  width: 100%;
+  /* height: 430px; */
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  text-align: center;
+  transition: all 0.25s;
+}
+.card img {
+  max-height: 214.85px;
+  padding-bottom: 15px;
+  object-fit: cover;
+}
+.card p {
+  padding: 10px 20px;
+}
+.card *:last-child {
+  padding-bottom: 20px;
+}
+.container-card .card:nth-child(2) {
+  margin: 0 50px;
+}
+.container-card .card:hover {
+  top: -15px;
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
 
 @media only screen and (max-width: 800px) {
   /* column-4 pasará de tener 25% a 50% */
+  .container-card {
+    min-width: auto;
+    align-content: stretch;
+  }
+  .card p {
+    margin: 0;
+  }
+  .card *:last-child {
+    padding-bottom: 40px;
+  }
   .column-4{
-      width: 50%;
+    width: 50%;
+    padding-top: 20px;
   }
   .section-intro {
     height: 500px;
@@ -274,8 +308,20 @@ a.link-to-book:hover {
 
 @media only screen and (max-width: 600px) {
   /* column-4 pasará de tener 25% a 50% */
+  .container-card {
+    min-width: auto;
+    align-content:stretch;
+  }
+
   .column-4{
-      width: 100%;
+    width: 100%;
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+  }
+  .column-4:last-child{
+    padding-bottom: 15px;
   }
   .section-intro {
     height: 300px;
